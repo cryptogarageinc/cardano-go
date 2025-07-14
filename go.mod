@@ -1,10 +1,10 @@
 module github.com/echovl/cardano-go
 
-go 1.18
+go 1.21
 
 require (
 	filippo.io/edwards25519 v1.0.0
-	github.com/blockfrost/blockfrost-go v0.1.0
+	github.com/blockfrost/blockfrost-go v0.3.0
 	github.com/dgraph-io/badger/v3 v3.2103.2
 	github.com/echovl/ed25519 v0.2.0
 	github.com/matoous/go-nanoid/v2 v2.0.0
@@ -28,7 +28,7 @@ require (
 	github.com/golang/snappy v0.0.3 // indirect
 	github.com/google/flatbuffers v1.12.1 // indirect
 	github.com/hashicorp/go-cleanhttp v0.5.2 // indirect
-	github.com/hashicorp/go-retryablehttp v0.7.0 // indirect
+	github.com/hashicorp/go-retryablehttp v0.7.5 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect
 	github.com/klauspost/compress v1.12.3 // indirect
