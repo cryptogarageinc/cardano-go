@@ -3,7 +3,7 @@ module github.com/echovl/cardano-go
 go 1.18
 
 require (
-	filippo.io/edwards25519 v1.0.0
+	filippo.io/edwards25519 v1.1.0
 	github.com/blockfrost/blockfrost-go v0.1.0
 	github.com/dgraph-io/badger/v3 v3.2103.2
 	github.com/echovl/ed25519 v0.2.0
