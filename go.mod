@@ -7,7 +7,7 @@ toolchain go1.24.7
 require (
 	filippo.io/edwards25519 v1.1.0
 	github.com/blockfrost/blockfrost-go v0.3.0
-	github.com/dgraph-io/badger/v4 v4.8.0
+	github.com/dgraph-io/badger/v4 v4.9.0
 	github.com/echovl/ed25519 v0.2.0
 	github.com/google/go-cmp v0.7.0
 	github.com/matoous/go-nanoid/v2 v2.1.0
@@ -46,5 +46,5 @@ require (
 	golang.org/x/net v0.47.0 // indirect
 	golang.org/x/sys v0.39.0 // indirect
 	golang.org/x/text v0.32.0 // indirect
-	google.golang.org/protobuf v1.36.6 // indirect
+	google.golang.org/protobuf v1.36.7 // indirect
 )
