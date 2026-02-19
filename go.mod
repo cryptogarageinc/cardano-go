@@ -5,7 +5,7 @@ go 1.24.0
 toolchain go1.24.7
 
 require (
-	filippo.io/edwards25519 v1.1.0
+	filippo.io/edwards25519 v1.1.1
 	github.com/blockfrost/blockfrost-go v0.3.0
 	github.com/dgraph-io/badger/v4 v4.9.1
 	github.com/echovl/ed25519 v0.2.0
