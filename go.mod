@@ -6,8 +6,8 @@ toolchain go1.25.8
 
 require (
 	filippo.io/edwards25519 v1.2.0
-	github.com/blockfrost/blockfrost-go v0.4.0
-	github.com/dgraph-io/badger/v4 v4.9.4
+	github.com/blockfrost/blockfrost-go v0.5.0
+	github.com/dgraph-io/badger/v4 v4.9.5
 	github.com/echovl/ed25519 v0.2.0
 	github.com/google/go-cmp v0.7.0
 	github.com/matoous/go-nanoid/v2 v2.1.0
