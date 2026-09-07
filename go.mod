@@ -1,8 +1,8 @@
 module github.com/cryptogarageinc/cardano-go
 
-go 1.25.0
+go 1.26.0
 
-toolchain go1.25.8
+toolchain go1.26.8
 
 require (
 	filippo.io/edwards25519 v1.2.0

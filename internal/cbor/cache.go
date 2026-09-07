@@ -49,7 +49,7 @@ type typeInfo struct {
 func newTypeInfo(t reflect.Type) *typeInfo {
 	tInfo := typeInfo{typ: t, kind: t.Kind()}
 
-	for t.Kind() == reflect.Ptr {
+	for t.Kind() == reflect.Pointer {
 		t = t.Elem()
 	}
 

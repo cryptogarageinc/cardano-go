@@ -1286,7 +1286,7 @@ var (
 
 func getEncodeFuncInternal(t reflect.Type) (encodeFunc, isEmptyFunc) {
 	k := t.Kind()
-	if k == reflect.Ptr {
+	if k == reflect.Pointer {
 		return getEncodeIndirectValueFunc(t), isEmptyPtr
 	}
 	switch t {
@@ -1352,7 +1352,7 @@ func getEncodeFuncInternal(t reflect.Type) (encodeFunc, isEmptyFunc) {
 }
 
 func getEncodeIndirectValueFunc(t reflect.Type) encodeFunc {
-	for t.Kind() == reflect.Ptr {
+	for t.Kind() == reflect.Pointer {
 		t = t.Elem()
 	}
 	f, _ := getEncodeFunc(t)
@@ -1360,10 +1360,10 @@ func getEncodeIndirectValueFunc(t reflect.Type) encodeFunc {
 		return nil
 	}
 	return func(e *encoderBuffer, em *encMode, v reflect.Value) error {
-		for v.Kind() == reflect.Ptr && !v.IsNil() {
+		for v.Kind() == reflect.Pointer && !v.IsNil() {
 			v = v.Elem()
 		}
-		if v.Kind() == reflect.Ptr && v.IsNil() {
+		if v.Kind() == reflect.Pointer && v.IsNil() {
 			e.Write(cborNil)
 			return nil
 		}

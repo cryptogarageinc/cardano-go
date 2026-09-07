@@ -521,7 +521,7 @@ func (d *decoder) value(v any) error {
 		return &InvalidUnmarshalError{"cbor: Unmarshal(nil)"}
 	}
 	rv := reflect.ValueOf(v)
-	if rv.Kind() != reflect.Ptr {
+	if rv.Kind() != reflect.Pointer {
 		return &InvalidUnmarshalError{"cbor: Unmarshal(non-pointer " + rv.Type().String() + ")"}
 	} else if rv.IsNil() {
 		return &InvalidUnmarshalError{"cbor: Unmarshal(nil " + rv.Type().String() + ")"}
@@ -611,7 +611,7 @@ func (d *decoder) parseToValue(v reflect.Value, tInfo *typeInfo) error { //nolin
 
 	// Create new value for the pointer v to point to if CBOR value is not nil/undefined.
 	if !d.nextCBORNil() {
-		for v.Kind() == reflect.Ptr {
+		for v.Kind() == reflect.Pointer {
 			if v.IsNil() {
 				if !v.CanSet() {
 					d.skip()
@@ -916,12 +916,12 @@ func (d *decoder) parseToTime() (tm time.Time, err error) {
 // parseToUnmarshaler parses CBOR data to value implementing Unmarshaler interface.
 // It assumes data is well-formed, and does not perform bounds checking.
 func (d *decoder) parseToUnmarshaler(v reflect.Value) error {
-	if d.nextCBORNil() && v.Kind() == reflect.Ptr && v.IsNil() {
+	if d.nextCBORNil() && v.Kind() == reflect.Pointer && v.IsNil() {
 		d.skip()
 		return nil
 	}
 
-	if v.Kind() != reflect.Ptr && v.CanAddr() {
+	if v.Kind() != reflect.Pointer && v.CanAddr() {
 		v = v.Addr()
 	}
 	if u, ok := v.Interface().(Unmarshaler); ok {
@@ -1784,7 +1784,7 @@ var (
 
 func fillNil(t cborType, v reflect.Value) error {
 	switch v.Kind() {
-	case reflect.Slice, reflect.Map, reflect.Interface, reflect.Ptr:
+	case reflect.Slice, reflect.Map, reflect.Interface, reflect.Pointer:
 		v.Set(reflect.Zero(v.Type()))
 		return nil
 	}

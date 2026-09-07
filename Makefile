@@ -2,13 +2,13 @@ GOBUILD = go build
 GOTEST = go test
 
 # tools
-goimports_version = v0.43.0
+goimports_version = v0.49.0
 yamlfmt_version = v0.21.0
-golangci_version = v2.11.3
-govulncheck_version = v1.1.4
-actionlint_version = v1.7.11
-ghalint_version = v1.5.5
-pinact_version = v3.9.0
+golangci_version = v2.13.2
+govulncheck_version = v1.7.0
+actionlint_version = v1.7.12
+ghalint_version = v1.5.6
+pinact_version = v4.1.1
 
 # targets
 cwallet:
@@ -50,7 +50,7 @@ lint-actions-all: lint-actionlint lint-ghalint
 lint-actions-all-fix: pinact lint-actions-all
 
 pinact:
-	go run github.com/suzuki-shunsuke/pinact/v3/cmd/pinact@${pinact_version} run
+	go run github.com/suzuki-shunsuke/pinact/v4/cmd/pinact@${pinact_version} run
 
 lint-actionlint:
 	go run github.com/rhysd/actionlint/cmd/actionlint@${actionlint_version}

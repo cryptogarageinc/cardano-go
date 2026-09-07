@@ -2737,7 +2737,7 @@ func TestUnmarshalArrayToStructNoToArrayOptionError(t *testing.T) {
 	} else if _, ok := err.(*UnmarshalTypeError); !ok {
 		t.Errorf("Decode(%+v) returned wrong error type %T, want (*UnmarshalTypeError)", v1, err)
 	} else if !strings.Contains(err.Error(), "cannot unmarshal") {
-		t.Errorf("Decode(%+v) returned error %q, want error containing %q", err.Error(), v1, "cannot unmarshal")
+		t.Errorf("Decode(%+v) returned error %v, want error containing %v", err.Error(), v1, "cannot unmarshal")
 	}
 	if !reflect.DeepEqual(v1, wantT) {
 		t.Errorf("Decode() = %+v (%T), want %+v (%T)", v1, v1, wantT, wantT)
