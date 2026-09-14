@@ -42,4 +42,4 @@ jobs:
           filter_mode: nofilter
           fail_level: error
           go_version: ${{ env.GO_VERSION }}
-          reporter: github-pr-review
+          reporter: ${{ github.event_name == 'pull_request' && 'github-pr-review' || 'github-check' }}

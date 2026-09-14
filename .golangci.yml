@@ -30,6 +30,10 @@ linters:
         text: "cognitive complexity"
         linters:
           - gocognit
+      - path: internal/cbor/valid_test.go
+        text: "File is not properly formatted (goimports)"
+        linters:
+          - goimports
   enable:
     - copyloopvar
     - dogsled
