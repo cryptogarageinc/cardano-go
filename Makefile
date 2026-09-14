@@ -2,7 +2,7 @@ GOBUILD = go build
 GOTEST = go test
 
 # tools
-goimports_version = v0.49.0
+goimports_version = v0.50.0
 yamlfmt_version = v0.21.0
 golangci_version = v2.13.2
 govulncheck_version = v1.7.0
